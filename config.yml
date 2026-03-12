@@ -1,0 +1,58 @@
+input_dir: ./entrada
+output_dir: ./salida
+
+include_extensions:
+  - .dxf
+  - .dwg
+
+exclude_layers:
+  - TEXT
+  - DIM
+  - COTAS
+  - ANNO
+  - ANNOTATION
+  - CARATULA
+  - CUADRO_DATOS
+  - SIMBOLOGIA
+  - LAYOUT
+  - VIEWPORT
+  - HATCH
+  - HATCHING
+  - DIMENSIONS
+  - DEFPOINTS
+  - LEADER
+  - MTEXT
+  - TITLE
+  - TITLEBLOCK
+
+# Patrones adicionales de exclusion (regex)
+exclude_layer_patterns:
+  - "^TEXT_"
+  - "^DIM_"
+  - "_ANNO$"
+  - "^MARCO"
+  - "^VISTA"
+
+# Lista blanca: si se define, solo se procesan estas capas (vacio = todas)
+include_layers: []
+
+geometry_rules:
+  closed_polyline_as_polygon: true
+  convert_blocks_to_points: true
+  snap_tolerance: 0.01
+
+crs:
+  # CRS de origen (dejar vacio para no reproyectar)
+  source_crs: EPSG:6369
+  # CRS de destino final
+  target_crs: EPSG:6369
+  # Si true, solo asigna CRS si el archivo no tiene uno definido
+  assign_only_if_missing: true
+
+output:
+  encoding: UTF-8
+  overwrite: true
+  group_by_source_file: true
+
+workers: 1
+log_level: INFO

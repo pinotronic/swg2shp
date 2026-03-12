@@ -1,0 +1,49 @@
+# Mapeo de tipos de entidad CAD a tipos geometricos GIS
+# Usado para clasificacion heuristica cuando la geometria OGR no es suficiente.
+
+point:
+  - "POINT"
+  - "INSERT"
+  - "BLOCK"
+
+line:
+  - "LINE"
+  - "LWPOLYLINE"
+  - "POLYLINE"
+  - "ARC"
+  - "SPLINE"
+  - "ELLIPSE"
+  - "3DPOLYLINE"
+
+polygon:
+  - "CIRCLE"
+  - "SOLID"
+  - "REGION"
+  - "FACE"
+
+# Entidades que deben ignorarse completamente (no se exportan a SHP)
+ignore:
+  - "MTEXT"
+  - "TEXT"
+  - "ATTDEF"
+  - "ATTRIB"
+  - "DIMENSION"
+  - "LEADER"
+  - "HATCH"
+  - "VIEWPORT"
+  - "IMAGE"
+  - "XLINE"
+  - "RAY"
+  - "OLE2FRAME"
+
+# Bloques tipicos de redes de agua potable que se convierten a punto
+water_network_blocks:
+  - "VALVULA"
+  - "HIDRANTE"
+  - "TOMA"
+  - "POZO"
+  - "MEDIDOR"
+  - "ACOMETIDA"
+  - "CODO"
+  - "TE"
+  - "REDUCCION"

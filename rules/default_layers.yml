@@ -1,0 +1,39 @@
+# Capas excluidas por defecto
+# Estas son capas de anotacion, cotas, simbolos y marcos tipicos en dibujos CAD
+# que no deben convertirse a geometria GIS.
+
+exclude:
+  exact:
+    - "TEXT"
+    - "DIM"
+    - "COTAS"
+    - "ANNO"
+    - "ANNOTATION"
+    - "LAYOUT"
+    - "VIEWPORT"
+    - "CARATULA"
+    - "CUADRO_DATOS"
+    - "SIMBOLOGIA"
+    - "TITLE"
+    - "TITLEBLOCK"
+    - "NOTES"
+    - "HATCH"
+    - "HATCHING"
+    - "DIMENSIONS"
+    - "LEADER"
+    - "MTEXT"
+    - "DEFPOINTS"
+    - "0"
+    - "XREF"
+    - "TRAMAS"
+    - "TEXTOS"
+    - "ACOTACION"
+
+  patterns:
+    - "^TEXT_"
+    - "^DIM_"
+    - "_ANNO$"
+    - "^VISTA"
+    - "^MARCO"
+    - "^RELLENO"
+    - "^TRAMADO"
